@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
+import SnackList from '../SnackList/SnackList';
 
 const mapReduxStateToProps = (reduxStore) => ({
   reduxStore
@@ -16,7 +17,6 @@ class App extends Component {
    
   }
 
-
   handleAddSnack = (event) => {
     this.setState({
       snack: event.target.value
@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   render() {
-
     const listItems = this.props.reduxStore.snackReducer.map(snackItem => 
       <li>{snackItem}</li>
     );
